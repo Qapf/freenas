@@ -24,7 +24,8 @@ if __name__ == "__main__":
     # We need to allow tpm in grub as sedutil-cli requires it
     config = [
         'GRUB_DISTRIBUTOR="TrueNAS Scale"',
-        'GRUB_CMDLINE_LINUX_DEFAULT="libata.allow_tpm=1"',
+        'GRUB_CMDLINE_LINUX_DEFAULT="amd_iommu=on iommu=pt kvm_amd.npt=1 kvm_amd.avic=1 '
+        'intel_iommu=on libata.allow_tpm=1"',
     ]
 
     terminal = ["console"]
